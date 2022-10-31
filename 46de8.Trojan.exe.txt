@@ -1,0 +1,147 @@
+T1204-M1038
+Application control may be able to prevent the running of executables masquerading as other files.
+
+T1204-M1031
+If a link is being visited by a user, network intrusion prevention systems and systems designed to scan and remove malicious downloads can be used to block activity.
+
+T1204-M1021
+If a link is being visited by a user, block unknown or unused files in transit by default that should not be downloaded or by policy from suspicious sites as a best practice to prevent some vectors, such as .scr, .exe, .pif, .cpl, etc. Some download scanning devices can open and analyze compressed and encrypted formats, such as zip and rar that may be used to conceal malicious files.
+
+T1204-M1017
+Use user training as a way to bring awareness to common phishing and spearphishing techniques and how to raise suspicion for potentially malicious events.
+
+T1204.002-M1038
+Application control may be able to prevent the running of executables masquerading as other files.
+
+T1204.002-M1017
+Use user training as a way to bring awareness to common phishing and spearphishing techniques and how to raise suspicion for potentially malicious events.
+
+T1106-M1038
+Identify and block potentially malicious software executed that may be executed through this technique by using application control  tools, like Windows Defender Application Control, AppLocker,   or Software Restriction Policies  where appropriate. 
+
+T1053.005-M1047
+Toolkits like the PowerSploit framework contain PowerUp modules that can be used to explore systems for permission weaknesses in scheduled tasks that could be used to escalate privileges. 
+
+T1053.005-M1028
+Configure settings for scheduled tasks to force tasks to run under the context of the authenticated account instead of allowing them to run as SYSTEM. The associated Registry key is located at HKLM\SYSTEM\CurrentControlSet\Control\Lsa\SubmitControl. The setting can be configured through GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > Security Options: Domain Controller: Allow server operators to schedule tasks, set to disabled. 
+
+T1053.005-M1026
+Configure the Increase Scheduling Priority option to only allow the Administrators group the rights to schedule a priority process. This can be configured through GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > User Rights Assignment: Increase scheduling priority. 
+
+T1053.005-M1018
+Limit privileges of user accounts and remediate Privilege Escalation vectors so only authorized administrators can create scheduled tasks on remote systems.
+
+T1053-M1047
+Toolkits like the PowerSploit framework contain PowerUp modules that can be used to explore systems for permission weaknesses in scheduled tasks that could be used to escalate privileges. 
+
+T1053-M1028
+Configure settings for scheduled tasks to force tasks to run under the context of the authenticated account instead of allowing them to run as SYSTEM. The associated Registry key is located at HKLM\SYSTEM\CurrentControlSet\Control\Lsa\SubmitControl. The setting can be configured through GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > Security Options: Domain Controller: Allow server operators to schedule tasks, set to disabled. 
+
+T1053-M1026
+Configure the Increase Scheduling Priority option to only allow the Administrators group the rights to schedule a priority process. This can be can be configured through GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > User Rights Assignment: Increase scheduling priority. 
+
+T1053-M1018
+Limit privileges of user accounts and remediate Privilege Escalation vectors so only authorized administrators can create scheduled tasks on remote systems.
+
+T1559.001-M1048
+Ensure all COM alerts and Protected View are enabled
+
+T1559.001-M1026
+Modify Registry settings (directly or using Dcomcnfg.exe) in HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\'{'{'AppID_GUID'}'}' associated with the process-wide security of individual COM applications. Modify Registry settings (directly or using Dcomcnfg.exe) in HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Ole associated with system-wide security defaults for all COM applications that do no set their own process-wide security. 
+
+T1559-M1048
+Ensure all COM alerts and Protected View are enabled
+
+T1559-M1040
+On Windows 10, enable Attack Surface Reduction (ASR) rules to prevent DDE attacks and spawning of child processes from Office programs.
+
+T1559-M1042
+Registry keys specific to Microsoft Office feature control security can be set to disable automatic DDE/OLE execution.  Microsoft also created, and enabled by default, Registry keys to completely disable DDE execution in Word and Excel.
+
+T1559-M1026
+Modify Registry settings (directly or using Dcomcnfg.exe) in HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\'{''{'AppID_GUID'}'}' associated with the process-wide security of individual COM applications. Modify Registry settings (directly or using Dcomcnfg.exe) in HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Ole associated with system-wide security defaults for all COM applications that do no set their own process-wide security. 
+
+T1559-M1054
+Consider disabling embedded files in Office programs, such as OneNote, that do not work with Protected View.
+
+T1055.012-M1040
+Some endpoint security solutions can be configured to block some types of process injection based on common sequences of behavior that occur during the injection process.
+
+T1055-M1040
+Some endpoint security solutions can be configured to block some types of process injection based on common sequences of behavior that occur during the injection process.
+
+T1055-M1026
+Utilize Yama (ex: /proc/sys/kernel/yama/ptrace_scope) to mitigate ptrace based process injection by restricting the use of ptrace to privileged users only. Other mitigation controls involve the deployment of security kernel modules that provide advanced access control and process restrictions such as SELinux, grsecurity, and AppArmor.
+
+T1134-M1026
+Limit permissions so that users and user groups cannot create tokens. This setting should be defined for the local system account only. GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > User Rights Assignment: Create a token object.  Also define who can create a process level token to only the local and network service through GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > User Rights Assignment: Replace a process level token. Administrators should log in as a standard user but run their tools with administrator privileges using the built-in access token manipulation command runas.
+
+T1134-M1018
+An adversary must already have administrator level access on the local system to make full use of this technique; be sure to restrict users and accounts to the least privileges they require.
+
+T1112-M1024
+Ensure proper permissions are set for Registry hives to prevent users from modifying keys for system components that may lead to privilege escalation.
+
+T1070-M1041
+Obfuscate/encrypt event files locally and in transit to avoid giving feedback to an adversary.
+
+T1070-M1029
+Automatically forward events to a log server or data repository to prevent conditions in which the adversary can locate and manipulate data on the local system. When possible, minimize time delay on event reporting to avoid prolonged storage on the local system.
+
+T1070-M1022
+Protect generated event files that are stored locally with proper permissions and authentication and limit opportunities for adversaries to increase privileges by preventing Privilege Escalation opportunities.
+
+T1027-M1049
+Consider utilizing the Antimalware Scan Interface (AMSI) on Windows 10 to analyze commands after being processed/interpreted
+
+T1552.002-M1047
+Proactively search for credentials within the Registry and attempt to remediate the risk.
+
+T1552.002-M1027
+Do not store credentials within the Registry.
+
+T1552.002-M1026
+If it is necessary that software must store credentials in the Registry, then ensure the associated accounts have limited permissions so they cannot be abused if obtained by an adversary.
+
+T1552-M1015
+Remove vulnerable Group Policy Preferences
+
+T1552-M1047
+Preemptively search for files containing passwords or other credentials and take actions to reduce the exposure risk when found.
+
+T1552-M1041
+When possible, store keys on separate cryptographic hardware instead of on the local system.
+
+T1552-M1037
+Limit access to the Instance Metadata API using a host-based firewall such as iptables. A properly configured Web Application Firewall (WAF) may help prevent external adversaries from exploiting Server-side Request Forgery (SSRF) attacks that allow access to the Cloud Instance Metadata API.
+
+T1552-M1028
+There are multiple methods of preventing a user's command history from being flushed to their .bash_history file, including use of the following commands:set +o history and set -o history to start logging again;unset HISTFILE being added to a user's .bash_rc file; andln -s /dev/null ~/.bash_history to write commands to /dev/nullinstead.
+
+T1552-M1027
+Use strong passphrases for private keys to make cracking difficult. Do not store credentials within the Registry. Establish an organizational policy that prohibits password storage in files.
+
+T1552-M1026
+If it is necessary that software must store credentials in the Registry, then ensure the associated accounts have limited permissions so they cannot be abused if obtained by an adversary.
+
+T1552-M1022
+Restrict file shares to specific directories with access only to necessary users.
+
+T1552-M1051
+Apply patch KB2962486 which prevents credentials from being stored in GPPs.
+
+T1552-M1017
+Ensure that developers and system administrators are aware of the risk associated with having plaintext passwords in software configuration files that may be left on endpoint systems or servers.
+
+T1571-M1031
+Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level.
+
+T1571-M1030
+Properly configure firewalls and proxies to limit outgoing traffic to only necessary ports for that particular network segment.
+
+T1573-M1031
+Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level.
+
+T1573-M1020
+SSL/TLS inspection can be used to see the contents of encrypted sessions to look for network-based indicators of malware communication protocols.
+
